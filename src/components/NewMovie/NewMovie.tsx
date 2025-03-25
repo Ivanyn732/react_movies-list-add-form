@@ -33,7 +33,6 @@ export const NewMovie: React.FC<Props> = ({ onAdd }) => {
     setImdbUrl('');
     setImdbId('');
     setCount(prev => prev + 1);
-    console.log(title)
   };
 
   return (
@@ -48,10 +47,33 @@ export const NewMovie: React.FC<Props> = ({ onAdd }) => {
         required
       />
 
-      <TextField name="description" label="Description" value={description} onChange={setDescription} />
-      <TextField name="imgUrl" label="Image URL" value={imgUrl} onChange={setImgUrl} required/>
-      <TextField name="imdbUrl" label="Imdb URL" value={imdbUrl} onChange={setImdbUrl} required/>
-      <TextField name="imdbId" label="Imdb ID" value={imdbId} onChange={setImdbId} required/>
+      <TextField
+        name="description"
+        label="Description"
+        value={description}
+        onChange={setDescription}
+      />
+      <TextField
+        name="imgUrl"
+        label="Image URL"
+        value={imgUrl}
+        onChange={setImgUrl}
+        required
+      />
+      <TextField
+        name="imdbUrl"
+        label="Imdb URL"
+        value={imdbUrl}
+        onChange={setImdbUrl}
+        required
+      />
+      <TextField
+        name="imdbId"
+        label="Imdb ID"
+        value={imdbId}
+        onChange={setImdbId}
+        required
+      />
 
       <div className="field is-grouped">
         <div className="control">
@@ -59,7 +81,12 @@ export const NewMovie: React.FC<Props> = ({ onAdd }) => {
             type="submit"
             data-cy="submit-button"
             className="button is-link"
-            disabled={!title.trim() || !imgUrl.trim() || !imdbUrl.trim() || !imdbId.trim()}
+            disabled={
+              !title.trim() ||
+              !imgUrl.trim() ||
+              !imdbUrl.trim() ||
+              !imdbId.trim()
+            }
           >
             Add
           </button>
